@@ -8,8 +8,8 @@
 
     public class MediaSystemContext : DbContext, IMediaSystemContext
     {
-        public MediaSystemContext() : 
-            base("MediaSystemDb")
+        public MediaSystemContext() :
+            base("db2781eecddbba4724baaca55200a845c2")
         {
         }
 
