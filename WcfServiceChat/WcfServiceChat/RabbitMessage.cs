@@ -7,14 +7,14 @@
 
     public class RabbitMessage
     {
-        private const string RabbitmqBigwigRxUrl = "amqp://9C5Djfc8:dYyTjbGPYvSJyVJB9EiH3liKpSzWyUEe@black-holly-59.bigwig.lshift.net:10917/u10ILtGVrwfV";
-        private const string RabbitmqBigwigTxUrl = "amqp://9C5Djfc8:dYyTjbGPYvSJyVJB9EiH3liKpSzWyUEe@black-holly-59.bigwig.lshift.net:10916/u10ILtGVrwfV";
+        //amqp://9C5Djfc8:dYyTjbGPYvSJyVJB9EiH3liKpSzWyUEe@black-holly-59.bigwig.lshift.net:10916/u10ILtGVrwfV
+        private const string RabbitmqBigwigUrl = "amqp://kagkkxnu:KtOwBDLjNxqjwQj51XP-bkJLOhfmo2ji@hare.rmq.cloudamqp.com/kagkkxnu";
         private const string QueueName = "chatMessage";
 
         public static void Send(string message)
         {
             var factory = new ConnectionFactory();
-            factory.HostName = RabbitmqBigwigTxUrl;
+            factory.HostName = RabbitmqBigwigUrl;
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
@@ -34,7 +34,7 @@
         {
             var messages = new List<string>();
             var factory = new ConnectionFactory();
-            factory.HostName = RabbitmqBigwigRxUrl;
+            factory.HostName = RabbitmqBigwigUrl;
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
