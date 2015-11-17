@@ -6,11 +6,10 @@
     {
         public void SendMessage(string message)
         {
-
-            //RabbitMessage.Send(message);
+            RabbitMessage.Send(message);
         }
 
-        public IEnumerable<string> GetAllMessages()
+        public string GetAllMessages()
         {
             return RabbitMessage.Receive();
         }

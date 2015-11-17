@@ -12,6 +12,6 @@
         void SendMessage(string message);
 
         [OperationContract]
-        IEnumerable<string> GetAllMessages();
+        string GetAllMessages();
     }
 }

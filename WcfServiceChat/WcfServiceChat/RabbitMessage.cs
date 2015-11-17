@@ -30,9 +30,9 @@
             }
         }
 
-        public static IEnumerable<string> Receive()
+        public static string Receive()
         {
-            var messages = new List<string>();
+            var messages = string.Empty;
             var factory = new ConnectionFactory();
             factory.HostName = RabbitmqBigwigUrl;
             using (var connection = factory.CreateConnection())
@@ -50,7 +50,7 @@
                     
                     byte[] body = ea.Body;
                     string message = System.Text.Encoding.UTF8.GetString(body);
-                    messages.Add(message);
+                    messages = message;
 
                     // Add some time to simulate processing
                     //Thread.Sleep(5000);
