@@ -6,7 +6,7 @@
     {
         public void SendMessage(ChatMessage message)
         {
-            
+            SendMq.Send(message);
         }
 
         public ChatMessage[] GetAllMessages()
