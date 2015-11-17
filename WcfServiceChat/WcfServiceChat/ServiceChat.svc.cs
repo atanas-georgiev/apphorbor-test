@@ -6,12 +6,12 @@
     {
         public void SendMessage(string message)
         {
-            RabbitMessage.Send(message);
+       //     RabbitMessage.Send(message);
         }
 
         public string GetAllMessages()
         {
-            return RabbitMessage.Receive();
+            return "test";
         }
     }
 }
